@@ -1,0 +1,99 @@
+/* ===========================
+   UTILITIES
+=========================== */
+
+.container {
+
+    width: min(1200px, 90%);
+
+    margin-inline: auto;
+
+}
+
+.flex {
+
+    display: flex;
+
+}
+
+.flex-center {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.grid {
+
+    display: grid;
+
+}
+
+.hidden {
+
+    display: none;
+
+}
+
+.text-center {
+
+    text-align: center;
+
+}
+
+.mt-sm {
+
+    margin-top: var(--space-sm);
+
+}
+
+.mt-md {
+
+    margin-top: var(--space-md);
+
+}
+
+.mt-lg {
+
+    margin-top: var(--space-lg);
+
+}
+
+.mb-sm {
+
+    margin-bottom: var(--space-sm);
+
+}
+
+.mb-md {
+
+    margin-bottom: var(--space-md);
+
+}
+
+.mb-lg {
+
+    margin-bottom: var(--space-lg);
+
+}
+
+.shadow {
+
+    box-shadow: var(--shadow-md);
+
+}
+
+.card {
+
+    background: var(--color-surface);
+
+    border-radius: var(--radius-md);
+
+    padding: var(--space-md);
+
+    box-shadow: var(--shadow-md);
+
+}

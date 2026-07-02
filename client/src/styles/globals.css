@@ -1,0 +1,103 @@
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+
+body {
+
+    font-family: var(--font-body);
+
+    background: var(--color-background);
+
+    color: var(--color-text);
+
+    line-height: 1.5;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+}
+
+/* TITLES */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+
+    font-family: var(--font-main);
+
+    color: var(--color-text);
+
+    line-height: 1.3;
+
+}
+
+/* PARAGRAPHS */
+
+p {
+
+    color: var(--color-text-light);
+
+}
+
+/* BUTTON */
+
+button {
+
+    transition: var(--transition-fast);
+
+}
+
+button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+button:active {
+
+    transform: translateY(1px);
+
+}
+
+/* INPUTS */
+
+input {
+
+    padding: var(--space-sm);
+
+    border-radius: var(--radius-sm);
+
+    border: 2px solid var(--color-border);
+
+}
+
+input:focus {
+
+    border-color: var(--color-primary);
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--color-primary);
+
+    border-radius: 999px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: #ececec;
+
+}

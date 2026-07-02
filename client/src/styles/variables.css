@@ -1,0 +1,75 @@
+/* ===========================
+   DESIGN TOKENS
+=========================== */
+
+:root {
+
+    /* COLORS */
+
+    --color-background: #fff8ff;
+
+    --color-surface: #ffffff;
+
+    --color-primary: #7ed7ff;
+
+    --color-secondary: #ff9fd2;
+
+    --color-accent: #b88cff;
+
+    --color-success: #90ee90;
+
+    --color-warning: #ffd966;
+
+    --color-danger: #ff8a8a;
+
+    --color-text: #353535;
+
+    --color-text-light: #666666;
+
+    --color-border: #d9d9d9;
+
+    --color-shadow: rgba(0, 0, 0, .12);
+
+    /* FONTS */
+
+    --font-main: "Press Start 2P", monospace;
+
+    --font-body: "Nunito", sans-serif;
+
+    /* SPACING */
+
+    --space-xs: 4px;
+
+    --space-sm: 8px;
+
+    --space-md: 16px;
+
+    --space-lg: 24px;
+
+    --space-xl: 40px;
+
+    --space-2xl: 64px;
+
+    /* BORDER */
+
+    --radius-sm: 8px;
+
+    --radius-md: 14px;
+
+    --radius-lg: 20px;
+
+    /* SHADOW */
+
+    --shadow-sm: 2px 2px 0 rgba(0, 0, 0, .15);
+
+    --shadow-md: 4px 4px 0 rgba(0, 0, 0, .18);
+
+    --shadow-lg: 6px 6px 0 rgba(0, 0, 0, .20);
+
+    /* TRANSITIONS */
+
+    --transition-fast: .15s ease;
+
+    --transition-normal: .25s ease;
+
+}
