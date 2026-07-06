@@ -1,0 +1,19 @@
+.layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+
+    min-height: 100vh;
+
+    background: var(--color-background);
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+
+    padding: 2rem;
+
+    overflow-y: auto;
+}
