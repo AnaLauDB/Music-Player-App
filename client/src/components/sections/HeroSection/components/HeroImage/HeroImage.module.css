@@ -1,0 +1,25 @@
+.image {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 340px;
+
+    height: 340px;
+
+    border-radius: 28px;
+
+    background: linear-gradient(135deg,
+
+            var(--color-primary),
+
+            var(--color-secondary));
+
+    font-size: 7rem;
+
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, .15);
+
+}

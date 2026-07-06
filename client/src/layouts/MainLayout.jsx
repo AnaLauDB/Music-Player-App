@@ -1,30 +1,18 @@
-import Header from "../components/layout/Header";
-import Sidebar from "../components/layout/Sidebar";
-import Hero from "../components/layout/Hero";
-import FeaturedPlaylists from "../components/layout/FeaturedPlaylists";
-import TopArtists from "../components/layout/TopArtists";
-import MiniPlayer from "../components/layout/MiniPlayer";
-import Footer from "../components/layout/Footer";
-
 import styles from "./MainLayout.module.css";
+
+import Sidebar from "../components/layout/Sidebar";
+import Header from "../components/layout/Header";
+import HeroSection from "../components/sections/HeroSection";
 
 function MainLayout() {
   return (
     <div className={styles.layout}>
       <Sidebar />
 
-      <main className={styles.mainContent}>
+      <main className={styles.main}>
         <Header />
 
-        <Hero />
-
-        <FeaturedPlaylists />
-
-        <TopArtists />
-
-        <MiniPlayer />
-
-        <Footer />
+        <HeroSection />
       </main>
     </div>
   );
