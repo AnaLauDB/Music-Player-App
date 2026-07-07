@@ -1,0 +1,49 @@
+/**
+ * Adapta una canción recibida desde Deezer
+ * a un formato estándar para la aplicación.
+ */
+export const adaptTrack = (track) => ({
+    id: track.id,
+
+    title: track.title,
+
+    duration: track.duration,
+
+    preview: track.preview,
+
+    artist: track.artist?.name ?? "Artista desconocido",
+
+    album: track.album?.title ?? "Álbum desconocido",
+
+    cover: track.album?.cover_xl || track.album?.cover_big || track.album?.cover_medium,
+
+    link: track.link,
+});
+
+/**
+ * Adapta una playlist de Deezer.
+ */
+export const adaptPlaylist = (playlist) => ({
+    id: playlist.id,
+
+    title: playlist.title,
+
+    picture: playlist.picture_xl || playlist.picture_big,
+
+    tracks: playlist.nb_tracks,
+
+    link: playlist.link,
+});
+
+/**
+ * Adapta un artista.
+ */
+export const adaptArtist = (artist) => ({
+    id: artist.id,
+
+    name: artist.name,
+
+    picture: artist.picture_xl || artist.picture_big,
+
+    link: artist.link,
+});
