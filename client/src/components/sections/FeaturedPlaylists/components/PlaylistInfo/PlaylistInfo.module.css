@@ -1,0 +1,18 @@
+.info {
+  display: grid;
+  gap: 6px;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #f7f7f8;
+}
+
+.tracks {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #a7adb8;
+}

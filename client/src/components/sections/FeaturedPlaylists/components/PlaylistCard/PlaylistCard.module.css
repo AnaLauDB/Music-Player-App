@@ -1,0 +1,19 @@
+.card {
+  background: #181a1f;
+  border: 1px solid #2a2e37;
+  border-radius: 16px;
+  padding: 10px;
+  transition: transform 120ms ease, border-color 120ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #4f94ff;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+  display: grid;
+  gap: 10px;
+}
