@@ -47,3 +47,25 @@ export const adaptArtist = (artist) => ({
 
     link: artist.link,
 });
+
+/**
+ * Adapta un álbum recibido desde Deezer.
+ */
+export const adaptAlbum = (album) => ({
+    id: album.id,
+
+    title: album.title,
+
+    cover:
+        album.cover_xl ||
+        album.cover_big ||
+        album.cover_medium,
+
+    artist: album.artist?.name ?? "Artista desconocido",
+
+    releaseDate: album.release_date,
+
+    tracks: album.nb_tracks,
+
+    link: album.link,
+});
