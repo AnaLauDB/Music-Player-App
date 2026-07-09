@@ -4,7 +4,6 @@ import Sidebar from "../components/layout/Sidebar";
 import Header from "../components/layout/Header";
 import HeroSection from "../components/sections/HeroSection";
 import FeaturedPlaylists from "../components/sections/FeaturedPlaylists";
-// import ReduxDevPanel from "../components/dev/ReduxDevPanel";
 
 function MainLayout() {
   return (
@@ -17,8 +16,6 @@ function MainLayout() {
         <HeroSection />
 
         <FeaturedPlaylists />
-
-        {/* <ReduxDevPanel /> */}
       </main>
     </div>
   );
