@@ -36,14 +36,23 @@ export const adaptPlaylist = (playlist) => ({
 });
 
 /**
- * Adapta un artista.
+ * Adapta un artista recibido desde Deezer.
  */
 export const adaptArtist = (artist) => ({
     id: artist.id,
 
     name: artist.name,
 
-    picture: artist.picture_xl || artist.picture_big,
+    picture:
+        artist.picture_xl ||
+        artist.picture_big ||
+        artist.picture_medium ||
+        artist.picture_small ||
+        artist.picture,
+
+    fans: artist.nb_fan ?? artist.fans ?? 0,
+
+    tracklist: artist.tracklist,
 
     link: artist.link,
 });
