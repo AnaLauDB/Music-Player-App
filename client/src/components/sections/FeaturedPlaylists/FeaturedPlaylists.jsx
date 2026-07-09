@@ -10,7 +10,7 @@ import { fetchChart } from "../../../redux/music/musicThunks";
 
 import PlaylistGrid from "./components/PlaylistGrid";
 import PlaylistSkeleton from "./components/PlaylistSkeleton";
-
+import SectionTitle from "../../common/SectionTittle";
 import styles from "./FeaturedPlaylists.module.css";
 
 function FeaturedPlaylists() {
@@ -27,10 +27,11 @@ function FeaturedPlaylists() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.header}>
-        <h2 className={styles.title}>Featured Playlists</h2>
-        <p className={styles.subtitle}>Lo más escuchado en Deezer</p>
-      </div>
+      <SectionTitle
+        icon="🎵"
+        title="Featured Playlists"
+        subtitle="Las playlists más populares de Deezer"
+      />
 
       {loading && (
         <div className={styles.grid}>
