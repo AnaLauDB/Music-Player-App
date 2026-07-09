@@ -1,40 +1,66 @@
 .section {
-	margin-top: 24px;
-	display: grid;
-	gap: 14px;
+	margin-top: 48px;
+
+	display: flex;
+	flex-direction: column;
+
+	gap: 24px;
 }
 
 .header {
 	display: flex;
+
 	justify-content: space-between;
-	align-items: baseline;
-	gap: 10px;
+
+	align-items: end;
+
 	flex-wrap: wrap;
+
+	gap: 16px;
 }
 
 .title {
 	margin: 0;
-	color: #f7f7f8;
-	font-size: 1.25rem;
+
+	font-size: 2rem;
+
+	color: var(--color-text);
+
+	text-shadow: 3px 3px 0 rgba(124, 92, 252, .15);
 }
 
 .subtitle {
-	margin: 0;
-	color: #9aa0ac;
-	font-size: 0.85rem;
+	margin-top: 6px;
+
+	color: var(--color-text-secondary);
+
+	font-size: .95rem;
 }
 
 .grid {
+
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-	gap: 14px;
+
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
+	gap: 28px;
+
+	align-items: stretch;
+
 }
 
 .message {
-	margin: 0;
-	padding: 12px;
-	border-radius: 10px;
-	border: 1px solid #333846;
-	color: #d8dbe2;
-	background: #1b1d23;
+
+	padding: 18px;
+
+	border: 3px solid var(--color-primary);
+
+	border-radius: 14px;
+
+	background: var(--color-surface);
+
+	color: var(--color-text);
+
+	box-shadow: 5px 5px 0 rgba(124, 92, 252, .18);
+
 }
