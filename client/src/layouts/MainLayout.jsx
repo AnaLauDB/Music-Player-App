@@ -4,6 +4,7 @@ import Sidebar from "../components/layout/Sidebar";
 import Header from "../components/layout/Header";
 import HeroSection from "../components/sections/HeroSection";
 import FeaturedPlaylists from "../components/sections/FeaturedPlaylists";
+import TopArtists from "../components/sections/TopArtists";
 
 function MainLayout() {
   return (
@@ -16,6 +17,7 @@ function MainLayout() {
         <HeroSection />
 
         <FeaturedPlaylists />
+        <TopArtists />
       </main>
     </div>
   );
