@@ -10,7 +10,7 @@
 
     min-height: 80vh;
 
-    background: var(--color-surface);
+    background: var(--color-background);
 
     border-right: 4px solid var(--color-primary);
 
