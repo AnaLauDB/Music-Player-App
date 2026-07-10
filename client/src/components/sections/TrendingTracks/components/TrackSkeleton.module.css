@@ -1,0 +1,21 @@
+.list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+.row {
+
+    display: grid;
+
+    grid-template-columns: 72px 1fr auto;
+
+    gap: 20px;
+
+    align-items: center;
+
+}

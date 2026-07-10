@@ -1,0 +1,55 @@
+.info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    width: 100%;
+
+}
+
+.info div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+.info h3 {
+
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 1rem;
+
+}
+
+.info p {
+
+    margin: 0;
+
+    color: var(--color-text-secondary);
+
+    font-size: .9rem;
+
+}
+
+.duration {
+
+    color: var(--color-text-secondary);
+
+    font-size: .85rem;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
