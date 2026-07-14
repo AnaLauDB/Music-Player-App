@@ -1,13 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import AudioProvider from "../providers/AudioProvider";
 import HomePage from "../pages/HomePage";
 
 function AppRouter() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
+      <AudioProvider>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </AudioProvider>
     </BrowserRouter>
   );
 }
