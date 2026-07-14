@@ -7,15 +7,11 @@ import styles from "./TrackRow.module.css";
 const TrackRow = ({ track, onPlay }) => {
   return (
     <article className={styles.row}>
-      <TrackCover cover={track.cover} title={track.title} />
+      <TrackCover track={track} />
 
-      <TrackInfo
-        title={track.title}
-        artist={track.artist}
-        duration={track.duration}
-      />
+      <TrackInfo track={track} />
 
-      <TrackActions track={track} onPlay={onPlay} />
+      <TrackActions onPlay={() => onPlay(track)} />
     </article>
   );
 };

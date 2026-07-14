@@ -1,31 +1,59 @@
-import { useAppSelector } from "../../../redux/hooks";
-import { selectTracks, selectLoading } from "../../../redux/music";
+import { useEffect } from "react";
+
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+
+import { fetchChart } from "../../../redux/music/musicThunks";
+
+import {
+  selectTrendingTracks,
+  selectMusicLoading,
+  selectMusicError,
+} from "../../../redux/music/musicSelectors";
+
+import useAudio from "../../../hooks/useAudio";
+
 import SectionTitle from "../../common/SectionTittle";
-import TrackList from "./components/TrackList";
-import TrackSkeleton from "./components/TrackSkeleton";
+import Loader from "../../common/Loader";
+
+import TrackRow from "./components/TrackRow";
+
 import styles from "./TrendingTracks.module.css";
 
-const handlePlay = (track) => {
-  console.log("Play:", track.title);
-};
-
 const TrendingTracks = () => {
-  const tracks = useAppSelector(selectTracks);
-  const loading = useAppSelector(selectLoading);
+  const dispatch = useAppDispatch();
+
+  const tracks = useAppSelector(selectTrendingTracks);
+
+  const loading = useAppSelector(selectMusicLoading);
+
+  const error = useAppSelector(selectMusicError);
+
+  const { playTrack } = useAudio();
+
+  useEffect(() => {
+    dispatch(fetchChart());
+  }, [dispatch]);
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  // if (error) {
+  //   return <ErrorState message={error} />;
+  // }
 
   return (
     <section className={styles.section}>
       <SectionTitle
-        icon="🎵"
-        title="Trending Tracks"
-        subtitle="Las canciones más populares del momento"
+        title="Canciones en tendencia"
+        subtitle="Top canciones de Deezer"
       />
 
-      {loading ? (
-        <TrackSkeleton />
-      ) : (
-        <TrackList tracks={tracks} onPlay={handlePlay} />
-      )}
+      <div className={styles.list}>
+        {tracks.map((track) => (
+          <TrackRow key={track.id} track={track} onPlay={playTrack} />
+        ))}
+      </div>
     </section>
   );
 };
