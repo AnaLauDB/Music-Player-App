@@ -10,10 +10,10 @@ import {
 
 import {
     setCurrentTrack,
-    play,
-    pause,
     setVolume,
 } from "../redux/player";
+
+import { audioManager } from "../audio";
 
 const useAudio = () => {
 
@@ -29,43 +29,61 @@ const useAudio = () => {
 
     const volume = useAppSelector(selectVolume);
 
-    /**
-     * Reproducir una canción.
-     */
-
     const playTrack = (track) => {
+
+        if (!track?.preview) return;
+
+        // misma canción
+
+        if (currentTrack?.id === track.id) {
+
+            if (isPlaying) {
+
+                audioManager.pause();
+
+            } else {
+
+                audioManager.resume();
+
+            }
+
+            return;
+
+        }
 
         dispatch(setCurrentTrack(track));
 
     };
 
-    /**
-     * Continuar reproducción.
-     */
-
-    const resume = () => {
-
-        dispatch(play());
-
-    };
-
-    /**
-     * Pausar.
-     */
-
     const pauseTrack = () => {
 
-        dispatch(pause());
+        audioManager.pause();
 
     };
 
-    /**
-     * Cambiar volumen.
-     */
+    const resumeTrack = () => {
+
+        audioManager.resume();
+
+    };
+
+    const stopTrack = () => {
+
+        audioManager.stop();
+
+    };
+
+    const seek = (time) => {
+
+        audioManager.seek(time);
+
+    };
 
     const changeVolume = (value) => {
 
         dispatch(setVolume(value));
+
+        audioManager.setVolume(value);
 
     };
 
@@ -83,9 +101,13 @@ const useAudio = () => {
 
         playTrack,
 
-        resume,
-
         pauseTrack,
+
+        resumeTrack,
+
+        stopTrack,
+
+        seek,
 
         changeVolume,
 
