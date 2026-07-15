@@ -15,14 +15,6 @@ const playerSlice = createSlice({
             state.isPlaying = true;
         },
 
-        play(state) {
-            state.isPlaying = true;
-        },
-
-        pause(state) {
-            state.isPlaying = false;
-        },
-
         setProgress(state, action) {
             state.progress = action.payload;
         },
@@ -87,13 +79,15 @@ const playerSlice = createSlice({
         resetPlayer() {
             return playerInitialState;
         },
+
+        setPlaying(state, action) {
+            state.isPlaying = action.payload;
+        },
     },
 });
 
 export const {
-    setCurrentTrack,
-    play,
-    pause,
+    setCurrentTrack, 
     setProgress,
     setDuration,
     setVolume,
@@ -106,6 +100,7 @@ export const {
     setLoading,
     setError,
     resetPlayer,
+    setPlaying,
 } = playerSlice.actions;
 
 export default playerSlice.reducer;
