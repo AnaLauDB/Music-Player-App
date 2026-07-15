@@ -8,8 +8,7 @@ import {
   selectMuted,
   setDuration,
   setProgress,
-  play,
-  pause,
+  setPlaying,
 } from "../redux/player";
 
 import {
@@ -28,27 +27,31 @@ const AudioProvider = ({ children }) => {
   const muted = useAppSelector(selectMuted);
 
   /**
-   * Registrar eventos una sola vez
+   * Registrar eventos del elemento Audio
    */
-
   useEffect(() => {
     const audio = audioManager.element;
 
     const callbacks = {
       onLoadedMetadata: () => {
-        dispatch(setDuration(audio.duration));
+        dispatch(setDuration(audio.duration || 0));
       },
 
       onTimeUpdate: () => {
-        dispatch(setProgress(audio.currentTime));
+        dispatch(setProgress(audio.currentTime || 0));
       },
 
       onPlay: () => {
-        dispatch(play());
+        dispatch(setPlaying(true));
       },
 
       onPause: () => {
-        dispatch(pause());
+        dispatch(setPlaying(false));
+      },
+
+      onEnded: () => {
+        dispatch(setPlaying(false));
+        dispatch(setProgress(0));
       },
     };
 
@@ -60,21 +63,18 @@ const AudioProvider = ({ children }) => {
   }, [dispatch]);
 
   /**
-   * Cambiar canción
+   * Cuando cambia la canción seleccionada
    */
-
   useEffect(() => {
     if (!currentTrack?.preview) return;
 
     audioManager.load(currentTrack.preview);
-
     audioManager.play();
   }, [currentTrack]);
 
   /**
    * Volumen
    */
-
   useEffect(() => {
     audioManager.setVolume(volume);
   }, [volume]);
@@ -82,7 +82,6 @@ const AudioProvider = ({ children }) => {
   /**
    * Mute
    */
-
   useEffect(() => {
     if (muted) {
       audioManager.mute();
