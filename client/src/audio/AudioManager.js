@@ -18,6 +18,12 @@ class AudioManager {
 
     }
 
+    resume() {
+
+        return this.audio.play();
+
+    }
+    
     pause() {
 
         this.audio.pause();
