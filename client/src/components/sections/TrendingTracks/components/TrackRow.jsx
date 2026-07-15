@@ -11,7 +11,7 @@ const TrackRow = ({ track, onPlay }) => {
 
       <TrackInfo track={track} />
 
-      <TrackActions onPlay={() => onPlay(track)} />
+      <TrackActions track={track} onPlay={() => onPlay(track)} />
     </article>
   );
 };
