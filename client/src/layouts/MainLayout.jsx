@@ -7,6 +7,7 @@ import FeaturedPlaylists from "../components/sections/FeaturedPlaylists";
 import TopArtists from "../components/sections/TopArtists";
 import Footer from "../components/layout/Footer";
 import TrendingTracks from "../components/sections/TrendingTracks";
+import NowPlaying from "../components/player/NowPlaying";
 
 function MainLayout() {
   return (
@@ -17,6 +18,8 @@ function MainLayout() {
         <Header />
 
         <HeroSection />
+
+        <NowPlaying />
 
         <FeaturedPlaylists />
 
