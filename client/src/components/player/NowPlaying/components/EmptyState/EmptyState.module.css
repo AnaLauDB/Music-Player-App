@@ -1,0 +1,22 @@
+.empty {
+    display: grid;
+    gap: var(--spacing-sm);
+
+    text-align: center;
+
+    padding: var(--spacing-lg);
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.empty h3 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.empty p {
+    margin: 0;
+    color: var(--text-secondary);
+}

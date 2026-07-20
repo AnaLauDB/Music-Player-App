@@ -1,0 +1,17 @@
+.info {
+    text-align: center;
+    display: grid;
+    gap: var(--spacing-xs);
+}
+
+.info h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: var(--font-size-md);
+}
+
+.info p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
