@@ -1,12 +1,12 @@
-import Turntable from "./components/Turntable";
+import Cabinet from "./components/Cabinet";
 
 import styles from "./MiniPlayer.module.css";
 
 const MiniPlayer = () => {
   return (
-    <aside className={styles.player}>
-      <Turntable />
-    </aside>
+    <section className={styles.player}>
+      <Cabinet />
+    </section>
   );
 };
 

@@ -1,0 +1,29 @@
+.container {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 320px;
+
+    margin: 0 auto;
+
+    aspect-ratio: 1 / 1;
+}
+
+.image {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    user-select: none;
+
+    pointer-events: none;
+}
+
+.layers {
+    position: absolute;
+
+    inset: 0;
+}
