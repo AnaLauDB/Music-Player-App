@@ -1,5 +1,5 @@
 import cabinet from "../../../../../assets/pink/record_player.png";
-
+import Vinyl from "../Vinyl";
 import styles from "./Cabinet.module.css";
 
 const Cabinet = ({ children }) => {
@@ -12,7 +12,11 @@ const Cabinet = ({ children }) => {
         draggable={false}
       />
 
-      <div className={styles.layers}>{children}</div>
+      <div className={styles.layers}>
+        <Vinyl />
+
+        {children}
+      </div>
     </div>
   );
 };
