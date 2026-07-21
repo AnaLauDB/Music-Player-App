@@ -4,8 +4,13 @@ import styles from "./Cabinet.module.css";
 
 const Cabinet = ({ children }) => {
   return (
-    <div className={styles.container}>
-      <img src={cabinet} alt="Retro Turntable" className={styles.image} />
+    <div className={styles.cabinet}>
+      <img
+        src={cabinet}
+        alt="Record Player"
+        className={styles.image}
+        draggable={false}
+      />
 
       <div className={styles.layers}>{children}</div>
     </div>

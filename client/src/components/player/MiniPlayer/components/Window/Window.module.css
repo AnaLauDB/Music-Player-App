@@ -1,0 +1,33 @@
+.window {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 420px;
+
+    margin: 0 auto;
+}
+
+.frame {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    user-select: none;
+
+    pointer-events: none;
+}
+
+.content {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
