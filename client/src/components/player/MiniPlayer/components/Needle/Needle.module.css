@@ -1,0 +1,15 @@
+.needle {
+
+    position: absolute;
+
+    width: 40%;
+
+    top: 15%;
+
+    left: 34%;
+
+    pointer-events: none;
+
+    user-select: none;
+
+}
