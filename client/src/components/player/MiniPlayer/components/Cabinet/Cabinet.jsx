@@ -1,4 +1,5 @@
 import cabinet from "../../../../../assets/pink/record_player.png";
+import Needle from "../Needle";
 import Vinyl from "../Vinyl";
 import styles from "./Cabinet.module.css";
 
@@ -14,6 +15,8 @@ const Cabinet = ({ children }) => {
 
       <div className={styles.layers}>
         <Vinyl />
+
+        <Needle />
 
         {children}
       </div>
