@@ -1,0 +1,43 @@
+.info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+.info {
+    flex: 1;
+}
+
+.info h4 {
+    margin: 0;
+
+    font-size: 0.72rem;
+
+    line-height: 1;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.info p {
+    margin-top: 2px;
+
+    font-size: 0.60rem;
+
+    opacity: 0.7;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}

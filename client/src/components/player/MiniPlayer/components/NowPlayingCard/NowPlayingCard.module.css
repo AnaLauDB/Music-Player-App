@@ -1,0 +1,27 @@
+.card {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 19%;
+
+    transform: translateX(-50%);
+
+    width: 45%;
+
+    padding: 0.45rem;
+
+    border-radius: 10px;
+
+    background: var(--color-surface);
+
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.45rem;
+}
