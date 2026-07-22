@@ -1,0 +1,19 @@
+.cover {
+  position: absolute;
+
+  width: 18%;
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  left: 40%;
+
+  top: 33%;
+
+  object-fit: cover;
+
+  pointer-events: none;
+
+  user-select: none;
+}
