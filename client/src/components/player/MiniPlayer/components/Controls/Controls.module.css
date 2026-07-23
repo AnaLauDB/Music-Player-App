@@ -1,0 +1,19 @@
+.controls {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 44px;
+
+    transform: translateX(-50%);
+
+    width: 20%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}

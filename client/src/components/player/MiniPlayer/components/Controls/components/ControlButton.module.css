@@ -1,0 +1,53 @@
+.button {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    transition: transform .2s ease;
+
+}
+
+.button:hover {
+
+    transform: scale(1.08);
+
+}
+
+.button:active {
+
+    transform: scale(.95);
+
+}
+
+.button:disabled {
+
+    opacity: .45;
+
+    cursor: default;
+
+}
+
+.button img {
+
+    width: 42px;
+
+    height: auto;
+
+    image-rendering: pixelated;
+
+    pointer-events: none;
+
+    user-select: none;
+
+}
