@@ -3,6 +3,7 @@ import Cabinet from "./components/Cabinet";
 
 import styles from "./MiniPlayer.module.css";
 import NowPlayingCard from "./components/NowPlayingCard";
+import Controls from "./components/Controls";
 
 const MiniPlayer = () => {
   return (
@@ -11,6 +12,8 @@ const MiniPlayer = () => {
         <Cabinet />
 
         <NowPlayingCard />
+
+        <Controls />
       </Window>
     </section>
   );
