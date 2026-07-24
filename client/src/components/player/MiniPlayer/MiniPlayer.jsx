@@ -4,6 +4,7 @@ import Cabinet from "./components/Cabinet";
 import styles from "./MiniPlayer.module.css";
 import NowPlayingCard from "./components/NowPlayingCard";
 import Controls from "./components/Controls";
+import ProgressBar from "./components/ProgressBar";
 
 const MiniPlayer = () => {
   return (
@@ -14,6 +15,8 @@ const MiniPlayer = () => {
         <NowPlayingCard />
 
         <Controls />
+
+        <ProgressBar />
       </Window>
     </section>
   );
