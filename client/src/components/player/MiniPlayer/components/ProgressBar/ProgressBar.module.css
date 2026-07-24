@@ -1,0 +1,65 @@
+.container {
+
+    position: absolute;
+
+    width: 82%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    bottom: 7px;
+
+    pointer-events: none;
+
+}
+
+.background {
+
+    width: 90%;
+
+    display: block;
+
+    margin: auto;
+
+}
+
+.current,
+.total {
+
+    position: static;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    color: #ff5eb4;
+
+    line-height: 1;
+
+}
+
+
+.timeLabels {
+
+    position: absolute;
+
+    left: 100px;
+
+    right: 100px;
+
+    top: calc(90% + 2px);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 9px;
+
+    color: #6d4c67;
+
+    z-index: 5;
+
+}
