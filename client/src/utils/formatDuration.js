@@ -1,12 +1,12 @@
 const formatDuration = (seconds = 0) => {
 
-    const minutes = Math.floor(seconds / 60);
+    if (!Number.isFinite(seconds)) return "0:00";
 
-    const remainingSeconds = seconds % 60;
+    const mins = Math.floor(seconds / 60);
 
-    return `${minutes}:${remainingSeconds
-        .toString()
-        .padStart(2, "0")}`;
+    const secs = Math.floor(seconds % 60);
+
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
 
 };
 
