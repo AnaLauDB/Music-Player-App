@@ -3,6 +3,7 @@ import styles from "./Sidebar.module.css";
 import SidebarLogo from "./components/SidebarLogo";
 
 import Navigation from "./components/Navigation";
+import MiniPlayer from "../../player/MiniPlayer";
 
 function Sidebar() {
   return (
@@ -10,6 +11,10 @@ function Sidebar() {
       <SidebarLogo />
 
       <Navigation />
+
+      <div className={styles.player}>
+        <MiniPlayer />
+      </div>
     </aside>
   );
 }

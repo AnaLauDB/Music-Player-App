@@ -1,19 +1,15 @@
 .sidebar {
-
+    width: 300px;
+    height: 100vh;
     display: flex;
-
     flex-direction: column;
+    background: #baf7a5;
+    border-right: 4px solid #71ef54;
+}
 
-    justify-content: flex-start;
-
-    width: 240px;
-
-    min-height: 80vh;
-
-    background: var(--color-background);
-
-    border-right: 4px solid var(--color-primary);
-
-    box-shadow: 4px 0px 0px rgba(0, 0, 0, .15);
-
+.player {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
 }
