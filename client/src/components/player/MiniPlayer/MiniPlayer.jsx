@@ -8,7 +8,7 @@ import ProgressBar from "./components/ProgressBar";
 
 const MiniPlayer = () => {
   return (
-    <section className={styles.player}>
+    <section className={styles.root}>
       <Window>
         <Cabinet />
 

@@ -1,23 +1,25 @@
 .window {
-    position: relative;
 
     width: 100%;
 
-    max-width: 420px;
+    height: 100%;
 
-    margin: 0 auto;
+    position: relative;
+
 }
 
 .frame {
+
+    width: var(--window-size);
+
+    height: var(--window-size);
+
     display: block;
-
-    width: 100%;
-
-    height: auto;
 
     user-select: none;
 
     pointer-events: none;
+
 }
 
 .content {

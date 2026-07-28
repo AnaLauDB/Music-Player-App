@@ -1,5 +1,12 @@
-.player {
-    width: 100%;
+.root {
+
+    --window-size: 450px;
+
+    width: var(--window-size);
+
+    height: var(--window-size);
+
+    position: relative;
 
     display: flex;
 
@@ -7,5 +14,6 @@
 
     align-items: center;
 
-    padding: var(--spacing-md);
+    flex-shrink: 0;
+
 }
