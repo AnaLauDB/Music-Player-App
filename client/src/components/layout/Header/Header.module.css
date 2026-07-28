@@ -6,7 +6,11 @@
 
     align-items: center;
 
-    gap: 24px;
+    width: 90%;
+    
+    max-width: 1100px;
+    
+    margin: 0 auto;
 
     padding: 20px;
 
@@ -16,6 +20,7 @@
 
     background: var(--color-surface);
 
+    gap: 1rem;
 }
 
 .actions {
@@ -25,5 +30,51 @@
     align-items: center;
 
     gap: 18px;
+
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+
+    .header {
+
+        padding: 18px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .header {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 16px;
+    }
+
+    .actions {
+
+        justify-content: flex-end;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .header {
+
+        padding: 14px;
+
+        border-radius: 18px;
+    }
+
+    .actions {
+
+        justify-content: center;
+
+        gap: 12px;
+    }
 
 }
