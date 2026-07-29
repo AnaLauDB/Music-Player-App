@@ -10,6 +10,9 @@
   border-radius: 16px;
   padding: 10px;
   transition: transform 120ms ease, border-color 120ms ease;
+  width: 200px;
+  
+  min-height: 250px;
 }
 
 .card:hover {
