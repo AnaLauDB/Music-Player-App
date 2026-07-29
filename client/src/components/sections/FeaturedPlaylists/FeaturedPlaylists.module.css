@@ -1,36 +1,21 @@
 .section {
-	margin-top: 48px;
-
 	display: flex;
 	flex-direction: column;
-
 	gap: 24px;
+	margin-top: 32px;
+	width: 100%;
+	margin-top: 32px;
 }
 
-.grid {
-
-	display: grid;
-
-	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-
-	gap: 28px;
-
-	align-items: stretch;
-
+.titleWrapper {
+	padding-left: 20px;
+	/* prueba entre 30 y 40px */
 }
 
 .message {
-
 	padding: 18px;
-
 	border: 3px solid var(--color-primary);
-
 	border-radius: 14px;
-
 	background: var(--color-surface);
-
 	color: var(--color-text);
-
-	box-shadow: 5px 5px 0 rgba(124, 92, 252, .18);
-
 }

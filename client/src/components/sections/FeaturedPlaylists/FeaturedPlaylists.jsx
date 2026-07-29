@@ -27,11 +27,13 @@ function FeaturedPlaylists() {
 
   return (
     <section className={styles.section}>
-      <SectionTitle
-        icon="🎵"
-        title="Featured Playlists"
-        subtitle="Las playlists más populares de Deezer"
-      />
+      <div className={styles.titleWrapper}>
+        <SectionTitle
+          icon="🎵"
+          title="Featured Playlists"
+          subtitle="Las playlists más populares de Deezer"
+        />
+      </div>
 
       {loading && (
         <div className={styles.grid}>
