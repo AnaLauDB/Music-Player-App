@@ -2,7 +2,7 @@ import styles from "./MainLayout.module.css";
 
 import Sidebar from "../components/layout/Sidebar";
 import Header from "../components/layout/Header";
-import HeroSection from "../components/sections/HeroSection";
+// import HeroSection from "../components/sections/HeroSection";
 import FeaturedPlaylists from "../components/sections/FeaturedPlaylists";
 import TopArtists from "../components/sections/TopArtists";
 import Footer from "../components/layout/Footer";
@@ -16,8 +16,8 @@ function MainLayout() {
 
       <main className={styles.mainContent}>
         <Header />
-
-        <HeroSection />
+        {/* 
+        <HeroSection /> */}
 
         <FeaturedPlaylists />
 
