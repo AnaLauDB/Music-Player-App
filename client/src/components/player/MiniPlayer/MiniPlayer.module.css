@@ -1,19 +1,26 @@
 .root {
-
-    --window-size: 450px;
+    --window-size: clamp(320px, 42vw, 450px);
 
     width: var(--window-size);
-
     height: var(--window-size);
 
     position: relative;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     flex-shrink: 0;
+}
 
+@media (max-width: 768px) {
+    .root {
+        --window-size: min(92vw, 420px);
+    }
+}
+
+@media (max-width: 480px) {
+    .root {
+        --window-size: min(96vw, 360px);
+    }
 }
