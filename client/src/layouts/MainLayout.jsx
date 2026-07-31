@@ -7,7 +7,6 @@ import FeaturedPlaylists from "../components/sections/FeaturedPlaylists";
 import TopArtists from "../components/sections/TopArtists";
 import Footer from "../components/layout/Footer";
 import TrendingTracks from "../components/sections/TrendingTracks";
-// import MiniPlayer from "../components/player/MiniPlayer";
 
 function MainLayout() {
   return (
