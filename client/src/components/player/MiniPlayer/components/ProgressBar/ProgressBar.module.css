@@ -63,3 +63,43 @@
     z-index: 5;
 
 }
+
+@media (max-width: 768px) {
+    .container {
+        width: 88%;
+
+        bottom: 6px;
+    }
+
+    .background {
+        width: 92%;
+    }
+
+    .timeLabels {
+        left: 40px;
+
+        right: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 94%;
+
+        bottom: 4px;
+    }
+
+    .background {
+        width: 94%;
+    }
+
+    .timeLabels {
+        left: 24px;
+
+        right: 24px;
+
+        top: calc(90% + 1px);
+
+        font-size: 8px;
+    }
+}

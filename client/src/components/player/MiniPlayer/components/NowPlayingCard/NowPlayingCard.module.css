@@ -25,3 +25,25 @@
 
     gap: 0.45rem;
 }
+
+@media (max-width: 768px) {
+    .card {
+        width: 48%;
+
+        bottom: 18%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 52%;
+
+        bottom: 17%;
+
+        padding: 0.35rem;
+    }
+
+    .content {
+        gap: 0.35rem;
+    }
+}

@@ -17,3 +17,27 @@
     align-items: center;
 
 }
+
+@media (max-width: 768px) {
+
+    .controls {
+
+        width: 24%;
+
+        bottom: 40px;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .controls {
+
+        width: 30%;
+
+        bottom: 34px;
+
+    }
+
+}
