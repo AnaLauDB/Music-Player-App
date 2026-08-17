@@ -18,9 +18,9 @@ function MainLayout() {
         {/* 
         <HeroSection /> */}
 
-        <FeaturedPlaylists />
-
         <TopArtists />
+
+        <FeaturedPlaylists />
 
         <TrendingTracks />
 
