@@ -1,11 +1,17 @@
 .grid {
+    display: flex;
 
-    display: grid;
+    gap: 28px;
 
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    overflow-x: auto;
 
-    gap: 32px;
+    padding: 8px 4px 16px;
 
-    margin-top: 20px;
+    scroll-behavior: smooth;
 
+    scrollbar-width: none;
+}
+
+.grid::-webkit-scrollbar {
+    display: none;
 }

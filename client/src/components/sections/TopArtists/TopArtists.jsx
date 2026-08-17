@@ -14,11 +14,13 @@ const TopArtists = () => {
 
   return (
     <section className={styles.section}>
-      <SectionTitle
-        icon="🎤"
-        title="Top Artists"
-        subtitle="Los artistas más escuchados"
-      />
+      <div className={styles.titleWrapper}>
+        <SectionTitle
+          icon="🎤"
+          title="Top Artists"
+          subtitle="Los artistas más escuchados"
+        />
+      </div>
 
       {loading ? <ArtistSkeleton /> : <ArtistGrid artists={artists} />}
     </section>

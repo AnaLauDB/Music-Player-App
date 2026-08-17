@@ -1,16 +1,19 @@
-import ArtistAvatar from "./ArtistAvatar";
-import ArtistInfo from "./ArtistInfo";
-
 import styles from "./ArtistCard.module.css";
 
-const ArtistCard = ({ artist }) => {
+function ArtistCard({ artist }) {
   return (
     <article className={styles.card}>
-      <ArtistAvatar artist={artist} />
+      <button className={styles.button}>
+        <img
+          className={styles.image}
+          src={artist.picture_medium || artist.picture}
+          alt={artist.name}
+        />
 
-      <ArtistInfo artist={artist} />
+        <span className={styles.name}>{artist.name}</span>
+      </button>
     </article>
   );
-};
+}
 
 export default ArtistCard;
