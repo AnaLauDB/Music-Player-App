@@ -7,39 +7,17 @@ export const searchTracks = createAsyncThunk(
 
     async (query, thunkAPI) => {
 
-        const normalizedQuery = query?.trim();
-
-        if (!normalizedQuery) {
-            return {
-                tracks: [],
-                artists: [],
-                albums: [],
-                playlists: [],
-            };
-        }
-
         try {
 
-            const [
-                tracks,
-                artists,
-            ] = await Promise.all([
-                musicAPI.searchTracks(normalizedQuery),
-                musicAPI.searchArtists(normalizedQuery),
-            ]);
+            const tracks = await musicAPI.searchTracks(query);
 
-            return {
-                tracks,
-                artists,
-                albums: [],
-                playlists: [],
-            };
+            return tracks;
 
         } catch (error) {
 
             return thunkAPI.rejectWithValue(
                 error.message ||
-                "Error al realizar la búsqueda."
+                "Error al buscar canciones."
             );
 
         }
