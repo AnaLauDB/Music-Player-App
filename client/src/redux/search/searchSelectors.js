@@ -1,5 +1,5 @@
 export const selectSearchQuery = (state) =>
-    state.search.query;
+    state.search.searchQuery;
 
 export const selectSearchResults = (state) =>
     state.search.results;

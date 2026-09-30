@@ -1,5 +1,5 @@
 const searchInitialState = {
-    query: "",
+    searchQuery: "",
 
     results: {
         tracks: [],
