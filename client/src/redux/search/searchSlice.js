@@ -11,16 +11,10 @@ const searchSlice = createSlice({
 
     reducers: {
 
-        /**
-         * Actualiza la búsqueda actual.
-         */
         setSearchQuery(state, action) {
-            state.query = action.payload;
+            state.searchQuery = action.payload;
         },
 
-        /**
-         * Limpia únicamente los resultados.
-         */
         clearSearchResults(state) {
             state.results = {
                 tracks: [],
@@ -30,9 +24,6 @@ const searchSlice = createSlice({
             };
         },
 
-        /**
-         * Reinicia completamente el módulo de búsqueda.
-         */
         clearSearch() {
             return searchInitialState;
         },
@@ -42,9 +33,6 @@ const searchSlice = createSlice({
 
         builder
 
-            /**
-             * Búsqueda en proceso.
-             */
             .addCase(searchTracks.pending, (state) => {
 
                 state.loading = true;
@@ -53,24 +41,18 @@ const searchSlice = createSlice({
 
             })
 
-            /**
-             * Búsqueda completada.
-             */
             .addCase(searchTracks.fulfilled, (state, action) => {
 
                 state.loading = false;
 
                 state.error = null;
 
-                state.query = action.meta.arg;
+                state.searchQuery = action.meta.arg;
 
-                state.results = action.payload;
+                state.results.tracks = action.payload;
 
             })
 
-            /**
-             * Búsqueda fallida.
-             */
             .addCase(searchTracks.rejected, (state, action) => {
 
                 state.loading = false;
