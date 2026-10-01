@@ -34,6 +34,26 @@ export const searchArtists = createAsyncThunk(
     }
 );
 
+/**
+ * Carga el detalle completo de un artista: canciones populares,
+ * discografia y playlists donde aparece.
+ */
+export const fetchArtistOverview = createAsyncThunk(
+    "search/fetchArtistOverview",
+
+    async (artistId, thunkAPI) => {
+        try {
+            const overview = await musicAPI.getArtistOverview(artistId);
+
+            return overview;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(
+                error.message || "No se pudo cargar el artista."
+            );
+        }
+    }
+);
+
 export const searchAll = createAsyncThunk(
     "search/searchAll",
 

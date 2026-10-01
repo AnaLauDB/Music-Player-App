@@ -1,6 +1,23 @@
 export const selectSearchQuery = (state) =>
     state.search.searchQuery;
 
+export const selectSubmittedQuery = (state) =>
+    state.search.submittedQuery;
+
+export const selectSearchIntent = (state) => state.search.intent;
+
+export const selectHasSearch = (state) => Boolean(state.search.submittedQuery);
+
+export const selectSearchArtist = (state) => state.search.artist;
+
+export const selectArtistTopTracks = (state) =>
+    state.search.artistTopTracks;
+
+export const selectArtistAlbums = (state) => state.search.artistAlbums;
+
+export const selectArtistPlaylists = (state) =>
+    state.search.artistPlaylists;
+
 export const selectSearchResults = (state) =>
     state.search.results;
 
