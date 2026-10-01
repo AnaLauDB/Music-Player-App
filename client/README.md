@@ -94,12 +94,12 @@ client/
 
 El store se organiza por dominio, y cada módulo sigue la misma estructura: estado inicial, selectores, thunks y slice.
 
-| Dominio | Responsabilidad |
-|---|---|
-| `music` | Chart, artistas y playlists destacados |
-| `search` | Consulta, resultados, carga y error |
+| Dominio  | Responsabilidad                             |
+| -------- | ------------------------------------------- |
+| `music`  | Chart, artistas y playlists destacados      |
+| `search` | Consulta, resultados, carga y error         |
 | `player` | Pista actual, cola y estado de reproducción |
-| `app` | Tema, indicador de carga y errores globales |
+| `app`    | Tema, indicador de carga y errores globales |
 
 ### Reproducción de audio
 
@@ -138,12 +138,12 @@ La aplicación queda disponible en `http://localhost:5173`.
 
 ## Scripts disponibles
 
-| Script | Descripción |
-|---|---|
-| `npm run dev` | Inicia el servidor de desarrollo de Vite |
-| `npm run build` | Genera el build optimizado para producción |
+| Script            | Descripción                                    |
+| ----------------- | ---------------------------------------------- |
+| `npm run dev`     | Inicia el servidor de desarrollo de Vite       |
+| `npm run build`   | Genera el build optimizado para producción     |
 | `npm run preview` | Previsualiza el build de producción localmente |
-| `npm run lint` | Ejecuta ESLint sobre el proyecto |
+| `npm run lint`    | Ejecuta ESLint sobre el proyecto               |
 
 ## Diseño responsivo
 
