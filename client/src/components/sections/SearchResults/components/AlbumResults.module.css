@@ -1,0 +1,40 @@
+.wrapper {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-lg);
+
+}
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(180px, 210px));
+
+    justify-content: center;
+
+    gap: 22px;
+
+}
+
+.list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-md);
+
+}
+
+.empty {
+
+    padding: var(--space-lg);
+    border: 3px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-light);
+    text-align: center;
+}

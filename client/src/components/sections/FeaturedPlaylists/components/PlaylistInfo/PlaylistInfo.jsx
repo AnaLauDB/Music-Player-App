@@ -4,7 +4,9 @@ function PlaylistInfo({ title, tracks }) {
   return (
     <div className={styles.info}>
       <h3 className={styles.title}>{title}</h3>
-      <p className={styles.tracks}>{tracks} canciones</p>
+
+      {/* Deezer no devuelve nb_tracks en algunos listados. */}
+      {tracks ? <p className={styles.tracks}>{tracks} canciones</p> : null}
     </div>
   );
 }

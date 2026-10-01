@@ -1,0 +1,128 @@
+.section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-xl);
+
+    margin-top: var(--space-xl);
+
+}
+
+.bar {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: var(--space-md);
+
+}
+
+.tabs {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: var(--space-sm);
+
+}
+
+.tab {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-sm);
+
+    padding: var(--space-sm) var(--space-md);
+
+    border: 3px solid var(--color-primary);
+
+    border-radius: var(--radius-sm);
+
+    background: var(--color-surface);
+    color: var(--color-text);
+
+    font-family: var(--font-body);
+    font-size: .9rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.tab:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-md);
+}
+
+.tabActive {
+
+    background: var(--color-primary);
+    color: var(--color-text);
+}
+
+.count {
+
+    padding: 0 var(--space-sm);
+
+    border-radius: var(--radius-sm);
+
+    background: var(--color-background);
+
+    font-size: .75rem;
+}
+
+.error {
+
+    padding: var(--space-lg);
+    border: 3px solid var(--color-danger);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text);
+    box-shadow: var(--shadow-md);
+}
+
+.close {
+
+    flex-shrink: 0;
+
+    padding: var(--space-sm) var(--space-md);
+
+    border: 3px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+
+    background: var(--color-surface);
+    color: var(--color-text);
+
+    font-family: var(--font-body);
+    font-size: .85rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.close:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-md);
+}
