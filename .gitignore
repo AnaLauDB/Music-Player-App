@@ -12,6 +12,8 @@ dist
 client/dist
 server/dist
 dist-ssr
+.github
+.opencode
 
 # ==========================
 # Environment variables
