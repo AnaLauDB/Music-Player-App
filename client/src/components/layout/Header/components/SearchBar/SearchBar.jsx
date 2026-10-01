@@ -7,7 +7,7 @@ import {
 
 import { setSearchQuery } from "../../../../../redux/search/searchSlice";
 
-import { searchTracks } from "../../../../../redux/search/searchThunks";
+import { searchAll } from "../../../../../redux/search/searchThunks";
 
 import styles from "./SearchBar.module.css";
 
@@ -29,7 +29,7 @@ const SearchBar = () => {
 
     if (!query) return;
 
-    dispatch(searchTracks(query));
+    dispatch(searchAll(query));
   };
 
   return (
@@ -38,8 +38,9 @@ const SearchBar = () => {
         type="search"
         value={searchQuery}
         onChange={handleChange}
-        placeholder="Buscar canciones, artistas o álbumes..."
+        placeholder="Buscar canciones o artistas..."
         disabled={loading}
+        autoComplete="off"
       />
 
       <button type="submit" disabled={loading || !searchQuery.trim()}>

@@ -2,7 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import searchInitialState from "./searchInitialState";
 
-import { searchTracks } from "./searchThunks";
+import {
+    searchAll,
+    searchTracks,
+    searchArtists,
+} from "./searchThunks";
 
 const searchSlice = createSlice({
     name: "search",
@@ -10,7 +14,6 @@ const searchSlice = createSlice({
     initialState: searchInitialState,
 
     reducers: {
-
         setSearchQuery(state, action) {
             state.searchQuery = action.payload;
         },
@@ -22,6 +25,7 @@ const searchSlice = createSlice({
                 albums: [],
                 playlists: [],
             };
+            state.error = null;
         },
 
         clearSearch() {
@@ -30,37 +34,57 @@ const searchSlice = createSlice({
     },
 
     extraReducers: (builder) => {
-
         builder
-
-            .addCase(searchTracks.pending, (state) => {
-
+            // searchAll
+            .addCase(searchAll.pending, (state) => {
                 state.loading = true;
-
                 state.error = null;
-
             })
-
-            .addCase(searchTracks.fulfilled, (state, action) => {
-
+            .addCase(searchAll.fulfilled, (state, action) => {
                 state.loading = false;
-
                 state.error = null;
-
                 state.searchQuery = action.meta.arg;
-
-                state.results.tracks = action.payload;
-
+                state.results.tracks = action.payload.tracks;
+                state.results.artists = action.payload.artists;
+            })
+            .addCase(searchAll.rejected, (state, action) => {
+                state.loading = false;
+                state.error =
+                    action.payload || "No se pudo realizar la búsqueda.";
             })
 
-            .addCase(searchTracks.rejected, (state, action) => {
-
+            // searchTracks
+            .addCase(searchTracks.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(searchTracks.fulfilled, (state, action) => {
                 state.loading = false;
-
+                state.error = null;
+                state.searchQuery = action.meta.arg;
+                state.results.tracks = action.payload;
+            })
+            .addCase(searchTracks.rejected, (state, action) => {
+                state.loading = false;
                 state.error =
-                    action.payload ||
-                    "No se pudo realizar la búsqueda.";
+                    action.payload || "No se pudo realizar la búsqueda.";
+            })
 
+            // searchArtists
+            .addCase(searchArtists.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(searchArtists.fulfilled, (state, action) => {
+                state.loading = false;
+                state.error = null;
+                state.searchQuery = action.meta.arg;
+                state.results.artists = action.payload;
+            })
+            .addCase(searchArtists.rejected, (state, action) => {
+                state.loading = false;
+                state.error =
+                    action.payload || "No se pudo realizar la búsqueda.";
             });
     },
 });

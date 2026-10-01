@@ -8,11 +8,6 @@ import {
     adaptPlaylist,
 } from "./adapters/musicAdapter";
 
-/**
- * =====================================================
- * Función privada para realizar peticiones GET
- * =====================================================
- */
 const request = async ({ endpoint, params = {} }) => {
     try {
         const response = await axiosClient.get(endpoint, {
@@ -27,9 +22,7 @@ const request = async ({ endpoint, params = {} }) => {
 };
 
 /**
- * =====================================================
  * Buscar canciones
- * =====================================================
  */
 export const searchTracks = async (query) => {
     const data = await request({
@@ -43,9 +36,7 @@ export const searchTracks = async (query) => {
 };
 
 /**
- * =====================================================
  * Buscar artistas
- * =====================================================
  */
 export const searchArtists = async (query) => {
     const data = await request({
@@ -59,7 +50,7 @@ export const searchArtists = async (query) => {
     const ids = new Set();
 
     data.data.forEach(({ artist }) => {
-        if (!ids.has(artist.id)) {
+        if (artist && !ids.has(artist.id)) {
             ids.add(artist.id);
             uniqueArtists.push(adaptArtist(artist));
         }
@@ -69,10 +60,22 @@ export const searchArtists = async (query) => {
 };
 
 /**
- * =====================================================
- * Obtener información de un artista
- * =====================================================
+ * Buscar canciones y artistas en una sola consulta.
+ * Deezer no admite filtros por album ni playlist, por lo que ambos
+ * casos se derivan de la busqueda de pistas.
  */
+export const searchAll = async (query) => {
+    const [tracks, artists] = await Promise.all([
+        searchTracks(query),
+        searchArtists(query),
+    ]);
+
+    return {
+        tracks,
+        artists,
+    };
+};
+
 export const getArtist = async (artistId) => {
     const data = await request({
         endpoint: `${DEEZER_ENDPOINTS.ARTIST}/${artistId}`,
@@ -81,11 +84,6 @@ export const getArtist = async (artistId) => {
     return adaptArtist(data);
 };
 
-/**
- * =====================================================
- * Obtener un álbum
- * =====================================================
- */
 export const getAlbum = async (albumId) => {
     const data = await request({
         endpoint: `${DEEZER_ENDPOINTS.ALBUM}/${albumId}`,
@@ -94,11 +92,6 @@ export const getAlbum = async (albumId) => {
     return adaptAlbum(data);
 };
 
-/**
- * =====================================================
- * Obtener una playlist
- * =====================================================
- */
 export const getPlaylist = async (playlistId) => {
     const data = await request({
         endpoint: `${DEEZER_ENDPOINTS.PLAYLIST}/${playlistId}`,
@@ -107,11 +100,6 @@ export const getPlaylist = async (playlistId) => {
     return adaptPlaylist(data);
 };
 
-/**
- * =====================================================
- * Obtener el Chart principal de Deezer
- * =====================================================
- */
 export const getChart = async () => {
     const data = await request({
         endpoint: DEEZER_ENDPOINTS.CHART,
@@ -124,14 +112,10 @@ export const getChart = async () => {
     };
 };
 
-/**
- * =====================================================
- * Servicio principal de música
- * =====================================================
- */
 export const musicAPI = {
     searchTracks,
     searchArtists,
+    searchAll,
     getArtist,
     getAlbum,
     getPlaylist,
