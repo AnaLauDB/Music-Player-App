@@ -5,7 +5,7 @@ import {
   selectSearchLoading,
 } from "../../../../../redux/search/searchSelectors";
 
-import { setSearchQuery } from "../../../../../redux/search/searchSlice";
+import { setSearchQuery, clearSearch } from "../../../../../redux/search/searchSlice";
 
 import { searchAll } from "../../../../../redux/search/searchThunks";
 
@@ -32,6 +32,10 @@ const SearchBar = () => {
     dispatch(searchAll(query));
   };
 
+  const handleClear = () => {
+    dispatch(clearSearch());
+  };
+
   return (
     <form className={styles.searchBar} onSubmit={handleSubmit}>
       <input
@@ -46,6 +50,18 @@ const SearchBar = () => {
       <button type="submit" disabled={loading || !searchQuery.trim()}>
         {loading ? "Buscando..." : "Buscar"}
       </button>
+
+      {searchQuery && (
+        <button
+          type="button"
+          className={styles.clear}
+          onClick={handleClear}
+          disabled={loading}
+          aria-label="Limpiar búsqueda"
+        >
+          Limpiar
+        </button>
+      )}
     </form>
   );
 };
