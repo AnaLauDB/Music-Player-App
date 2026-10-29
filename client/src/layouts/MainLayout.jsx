@@ -8,6 +8,7 @@ import TopArtists from "../components/sections/TopArtists";
 import Footer from "../components/layout/Footer";
 import TrendingTracks from "../components/sections/TrendingTracks";
 import SearchResults from "../components/sections/SearchResults";
+import MobilePlayerBar from "../components/layout/MobilePlayerBar/MobilePlayerBar";
 
 function MainLayout() {
   return (
@@ -29,6 +30,8 @@ function MainLayout() {
 
         <Footer />
       </main>
+
+      <MobilePlayerBar />
     </div>
   );
 }

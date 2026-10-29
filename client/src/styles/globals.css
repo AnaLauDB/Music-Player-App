@@ -2,6 +2,14 @@
    GLOBAL STYLES
 =========================== */
 
+html {
+
+    -webkit-text-size-adjust: 100%;
+
+    text-size-adjust: 100%;
+
+}
+
 body {
 
     font-family: var(--font-body);
@@ -14,7 +22,25 @@ body {
 
     min-height: 100vh;
 
-    overflow-x: hidden;
+    min-height: 100dvh;
+
+    overflow-x: clip;
+
+}
+
+#root {
+
+    min-height: 100vh;
+
+    min-height: 100dvh;
+
+}
+
+:focus-visible {
+
+    outline: 3px solid var(--color-accent);
+
+    outline-offset: 3px;
 
 }
 
@@ -99,5 +125,29 @@ input:focus {
 ::-webkit-scrollbar-track {
 
     background: #ececec;
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+
+        scroll-behavior: auto !important;
+
+    }
 
 }
