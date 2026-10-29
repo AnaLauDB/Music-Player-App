@@ -1,51 +1,36 @@
 .section {
-
     display: flex;
-
     flex-direction: column;
+    gap: clamp(16px, 3vw, var(--space-xl));
 
-    gap: var(--space-xl);
-
-    margin-top: var(--space-xl);
-
-    padding-left: 20px;
-
+    margin-top: clamp(20px, 3vw, var(--space-xl));
 }
 
 .bar {
-
     display: flex;
-
     align-items: flex-start;
-
     justify-content: space-between;
-
     gap: var(--space-md);
 
+    min-width: 0;
 }
 
 .tabs {
-
     display: flex;
-
     flex-wrap: wrap;
-
     gap: var(--space-sm);
 
+    min-width: 0;
 }
 
 .tab {
-
     display: flex;
-
     align-items: center;
-
     gap: var(--space-sm);
 
     padding: var(--space-sm) var(--space-md);
 
     border: 3px solid var(--color-primary);
-
     border-radius: var(--radius-sm);
 
     background: var(--color-surface);
@@ -55,6 +40,8 @@
     font-size: .9rem;
     font-weight: 700;
 
+    white-space: nowrap;
+
     cursor: pointer;
 
     box-shadow: var(--shadow-sm);
@@ -62,23 +49,22 @@
     transition: transform var(--transition-fast),
         box-shadow var(--transition-fast),
         background var(--transition-fast);
+
+    touch-action: manipulation;
 }
 
 .tab:hover {
-
     transform: translateY(-2px);
 
     box-shadow: var(--shadow-md);
 }
 
 .tabActive {
-
     background: var(--color-primary);
     color: var(--color-text);
 }
 
 .count {
-
     padding: 0 var(--space-sm);
 
     border-radius: var(--radius-sm);
@@ -89,18 +75,23 @@
 }
 
 .error {
-
     padding: var(--space-lg);
+
     border: 3px solid var(--color-danger);
     border-radius: var(--radius-md);
+
     background: var(--color-surface);
     color: var(--color-text);
+
     box-shadow: var(--shadow-md);
+
+    overflow-wrap: anywhere;
 }
 
 .close {
-
     flex-shrink: 0;
+
+    min-height: 44px;
 
     padding: var(--space-sm) var(--space-md);
 
@@ -123,8 +114,39 @@
 }
 
 .close:hover {
-
     transform: translateY(-2px);
 
     box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 640px) {
+    .bar {
+        flex-direction: column;
+    }
+
+    .close {
+        align-self: flex-end;
+    }
+
+    .tabs {
+        flex-wrap: nowrap;
+
+        overflow-x: auto;
+
+        padding-bottom: 4px;
+
+        scrollbar-width: none;
+    }
+
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab {
+        flex: 0 0 auto;
+
+        padding: 8px 12px;
+
+        font-size: .82rem;
+    }
 }

@@ -1,55 +1,57 @@
 .info {
-
     display: flex;
-
-    justify-content: space-between;
-
     align-items: center;
-
-    gap: 20px;
+    justify-content: space-between;
+    gap: clamp(10px, 2vw, 20px);
 
     width: 100%;
-
+    min-width: 0;
 }
 
 .info div {
-
     display: flex;
-
     flex-direction: column;
+    gap: 4px;
 
-    gap: 6px;
-
+    min-width: 0;
 }
 
 .info h3 {
-
     margin: 0;
 
+    overflow: hidden;
+
     color: var(--color-text);
+    font-size: clamp(.88rem, 1.5vw, 1rem);
 
-    font-size: 1rem;
-
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .info p {
-
     margin: 0;
 
+    overflow: hidden;
+
     color: var(--color-text-secondary);
+    font-size: clamp(.78rem, 1.3vw, .9rem);
 
-    font-size: .9rem;
-
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .duration {
+    flex-shrink: 0;
 
     color: var(--color-text-secondary);
-
     font-size: .85rem;
-
     font-weight: 600;
 
     white-space: nowrap;
+}
 
+@media (max-width: 480px) {
+    .duration {
+        font-size: .72rem;
+    }
 }

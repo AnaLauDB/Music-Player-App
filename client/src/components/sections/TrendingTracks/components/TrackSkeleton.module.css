@@ -1,21 +1,23 @@
 .list {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 18px;
-
 }
 
 .row {
-
     display: grid;
-
-    grid-template-columns: 72px 1fr auto;
-
-    gap: 20px;
-
+    grid-template-columns: 72px minmax(0, 1fr) auto;
     align-items: center;
+    gap: 20px;
+}
 
+@media (max-width: 600px) {
+    .list {
+        gap: 12px;
+    }
+
+    .row {
+        grid-template-columns: 56px minmax(0, 1fr) auto;
+        gap: 10px;
+    }
 }
