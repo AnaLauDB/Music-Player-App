@@ -1,40 +1,33 @@
 .cabinet {
     position: relative;
 
-    width: min(72%, 100%);
-
-    margin-inline: auto;
-
     display: flex;
-
     justify-content: center;
 
-    margin-top: -50px;
+    width: min(72%, 100%);
+
+    margin-top: -10%;
+    margin-inline: auto;
 }
 
 .image {
     display: block;
 
     width: 50%;
-
     height: auto;
 
     user-select: none;
-
     pointer-events: none;
 }
 
 .layers {
     position: absolute;
-
     inset: 0;
 }
 
 @media (max-width: 768px) {
     .cabinet {
         width: 85%;
-
-        margin-top: -42px;
     }
 
     .image {
@@ -45,8 +38,6 @@
 @media (max-width: 480px) {
     .cabinet {
         width: 100%;
-
-        margin-top: -36px;
     }
 
     .image {

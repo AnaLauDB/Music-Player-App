@@ -1,43 +1,13 @@
 .controls {
-
     position: absolute;
-
+    bottom: 10%;
     left: 50%;
 
-    bottom: 44px;
-
-    transform: translateX(-50%);
-
-    width: 20%;
-
     display: flex;
-
+    align-items: center;
     justify-content: space-between;
 
-    align-items: center;
+    width: 24%;
 
-}
-
-@media (max-width: 768px) {
-
-    .controls {
-
-        width: 24%;
-
-        bottom: 40px;
-
-    }
-
-}
-
-@media (max-width: 480px) {
-
-    .controls {
-
-        width: 30%;
-
-        bottom: 34px;
-
-    }
-
+    transform: translateX(-50%);
 }
