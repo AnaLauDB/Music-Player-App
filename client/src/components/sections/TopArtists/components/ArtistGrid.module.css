@@ -1,13 +1,13 @@
 .grid {
     display: flex;
-
-    gap: 28px;
+    gap: clamp(16px, 2.4vw, 28px);
 
     overflow-x: auto;
 
     padding: 8px 4px 16px;
 
     scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
 
     scrollbar-width: none;
 }

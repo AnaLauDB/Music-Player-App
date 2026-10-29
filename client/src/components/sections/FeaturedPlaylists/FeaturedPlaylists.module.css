@@ -1,20 +1,39 @@
 .section {
-	display: flex;
-	flex-direction: column;
-	gap: 24px;
-	margin-top: 32px;
-	width: 100%;
-	margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 2vw, 24px);
+
+    width: 100%;
+
+    margin-top: clamp(20px, 3vw, 32px);
 }
 
 .titleWrapper {
-	padding-left: 20px;
+    min-width: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    justify-items: center;
+
+    gap: clamp(12px, 2vw, 22px);
 }
 
 .message {
-	padding: 18px;
-	border: 3px solid var(--color-primary);
-	border-radius: 14px;
-	background: var(--color-surface);
-	color: var(--color-text);
+    padding: 16px;
+
+    border: 3px solid var(--color-primary);
+    border-radius: 14px;
+
+    background: var(--color-surface);
+    color: var(--color-text);
+
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
 }

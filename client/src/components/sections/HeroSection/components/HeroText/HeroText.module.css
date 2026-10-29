@@ -1,8 +1,8 @@
 .badge {
-
     display: inline-block;
 
     width: max-content;
+    max-width: 100%;
 
     padding: .55rem 1rem;
 
@@ -11,27 +11,31 @@
     background: var(--color-primary);
 
     font-weight: bold;
-
 }
 
 .title {
-
     margin-top: 1rem;
 
-    font-size: 3rem;
-
+    font-size: clamp(1.8rem, 5vw, 3rem);
     line-height: 1.15;
 
+    overflow-wrap: anywhere;
 }
 
 .description {
-
+    max-width: 550px;
     margin-top: 1rem;
 
-    max-width: 550px;
-
-    line-height: 1.8;
-
     color: #666;
+    line-height: 1.8;
+}
 
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.55rem;
+    }
+
+    .description {
+        line-height: 1.6;
+    }
 }
