@@ -39,15 +39,21 @@ const SearchBar = () => {
   return (
     <form className={styles.searchBar} onSubmit={handleSubmit}>
       <input
+        className={styles.input}
         type="search"
         value={searchQuery}
         onChange={handleChange}
         placeholder="Buscar canciones o artistas..."
         disabled={loading}
         autoComplete="off"
+        aria-label="Buscar canciones o artistas"
       />
 
-      <button type="submit" disabled={loading || !searchQuery.trim()}>
+      <button
+        className={styles.submit}
+        type="submit"
+        disabled={loading || !searchQuery.trim()}
+      >
         {loading ? "Buscando..." : "Buscar"}
       </button>
 

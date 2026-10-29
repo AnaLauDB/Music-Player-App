@@ -1,9 +1,6 @@
 .item {
-
     display: flex;
-
     align-items: center;
-
     gap: 1rem;
 
     width: 100%;
@@ -11,25 +8,62 @@
     padding: .9rem 1rem;
 
     border: none;
+    border-radius: 14px;
 
     background: transparent;
 
     cursor: pointer;
 
-    border-radius: 14px;
-
-    transition: .2s;
-
+    transition: background .2s ease, transform .2s ease;
 }
 
 .item:hover {
-
     background: var(--color-secondary);
-
 }
 
 .icon {
-
     width: 26px;
+    height: 26px;
 
+    flex-shrink: 0;
+
+    object-fit: contain;
+}
+
+@media (max-width: 900px) {
+    .item {
+        width: auto;
+
+        flex: 0 0 auto;
+
+        gap: .45rem;
+
+        padding: .65rem .8rem;
+
+        white-space: nowrap;
+
+        touch-action: manipulation;
+    }
+
+    .icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .item {
+        flex-direction: column;
+
+        gap: .25rem;
+
+        padding: .5rem .65rem;
+
+        font-size: .7rem;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
 }
