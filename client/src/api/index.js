@@ -1,5 +1,5 @@
-export { default as axiosClient } from "./axiosClient";
+export { default as axiosClient } from "./client/axiosClient";
 
-export * from "./endpoints";
+export * from "./endpoints/musicEndpoints";
 
 export * from "./musicApi";

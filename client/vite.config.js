@@ -11,11 +11,9 @@ export default defineConfig({
 
             "/api": {
 
-                target: "https://api.deezer.com",
+                target: "http://localhost:5000",
 
                 changeOrigin: true,
-
-                rewrite: (path) => path.replace(/^\/api/, ""),
 
             },
 

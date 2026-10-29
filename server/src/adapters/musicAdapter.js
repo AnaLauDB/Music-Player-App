@@ -15,7 +15,10 @@ export const adaptTrack = (track) => ({
 
     album: track.album?.title ?? "Álbum desconocido",
 
-    cover: track.album?.cover_xl || track.album?.cover_big || track.album?.cover_medium,
+    cover:
+        track.album?.cover_xl ||
+        track.album?.cover_big ||
+        track.album?.cover_medium,
 
     link: track.link,
 });

@@ -1,5 +1,4 @@
 export const DEEZER_ENDPOINTS = {
-
     SEARCH: "/search",
 
     SEARCH_TRACK: "/search/track",
@@ -25,5 +24,4 @@ export const DEEZER_ENDPOINTS = {
     ARTIST_ALBUMS: "/artist/{id}/albums",
 
     ARTIST_PLAYLISTS: "/artist/{id}/playlists",
-
 };
